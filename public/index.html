@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线聊天室</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 登录界面 -->
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="fas fa-comments"></i>
+                <h1>在线聊天室</h1>
+                <p>输入您的昵称开始聊天</p>
+            </div>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="请输入昵称" maxlength="20" required>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    进入聊天室
+                </button>
+            </form>
+            <div id="login-error" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- 聊天界面 -->
+    <div id="chat-screen" class="screen hidden">
+        <div class="chat-container">
+            <!-- 聊天头部 -->
+            <div class="chat-header">
+                <div class="header-left">
+                    <i class="fas fa-comments"></i>
+                    <h2>聊天室</h2>
+                </div>
+                <div class="header-right">
+                    <div class="online-indicator">
+                        <i class="fas fa-circle"></i>
+                        <span id="online-count">0</span> 在线
+                    </div>
+                    <button id="logout-btn" class="btn-secondary">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body">
+                <!-- 侧边栏 -->
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <h3><i class="fas fa-users"></i> 在线用户</h3>
+                    </div>
+                    <div id="user-list" class="user-list"></div>
+                </div>
+
+                <!-- 消息区域 -->
+                <div class="messages-container">
+                    <div id="messages" class="messages"></div>
+                    <div id="typing-indicator" class="typing-indicator"></div>
+                    
+                    <!-- 输入区域 -->
+                    <div class="input-container">
+                        <form id="message-form">
+                            <div class="message-input-group">
+                                <input type="text" id="message-input" placeholder="输入消息..." maxlength="500" autocomplete="off">
+                                <button type="submit" id="send-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html> 
